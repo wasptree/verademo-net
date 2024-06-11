@@ -21,7 +21,7 @@ Blab-a-Gag is a fairly simple forum type application which allows:
 If you don't already have Docker this is a prerequisite.
 
 ```
-docker run --rm -it -p 127.0.0.1:8080:8080 antfie/verademo-dotnet
+docker run --rm -it -p 127.0.0.1:8080:8080 antfie/verademo-net
 ```
 
 Navigate to: http://127.0.0.1:8080.
@@ -32,14 +32,14 @@ See the `docs` folder.
 
 ## Technologies Used
 
-* ASP.NET Core MVC on .NET Core 3.1
+* ASP.NET Core MVC on .NET 8.0
 * Sql Server 2017 Express
 
 ## Development
 
 To build the container run this:
 ```
-docker pull mcr.microsoft.com/mssql/server:2017-CU24-ubuntu-16.04
+docker pull mcr.microsoft.com/mssql/server:2022-CU12-ubuntu-22.04
 docker build --no-cache -t verademo-dotnet .
 ```
 

@@ -6,7 +6,7 @@ namespace Verademo.Models
     {
         public SearchBlabsViewModel()
         {
-            Blabs = new List<BlabSearchResultViewModel>();
+            Blabs = [];
         }
 
         public string Error { get; set; }

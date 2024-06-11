@@ -6,7 +6,7 @@ namespace Verademo.Models
     {
         public BlabbersViewModel()
         {
-            Blabbers = new List<Blabber>();
+            Blabbers = [];
         }
 
         public string Error { get; set; }

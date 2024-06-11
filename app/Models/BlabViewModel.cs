@@ -6,7 +6,7 @@ namespace Verademo.Models
     {
         public BlabViewModel()
         {
-            Comments = new List<Comment>();
+            Comments = [];
         }
         public string BlabName { get; set; }
 

@@ -48,15 +48,11 @@ namespace Verademo.Models
             {
                 return sb.ToString();
             }
+            var retVal = MD5.HashData(Encoding.ASCII.GetBytes(input));
 
-            using (MD5 md5 = MD5.Create())
+            foreach (var t in retVal)
             {
-                var retVal = md5.ComputeHash(Encoding.ASCII.GetBytes(input));
-
-                foreach (var t in retVal)
-                {
-                    sb.Append(t.ToString("x2"));
-                }
+                sb.Append(t.ToString("x2"));
             }
 
             return sb.ToString();

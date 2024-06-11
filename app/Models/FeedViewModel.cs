@@ -6,8 +6,8 @@ namespace Verademo.Models
     {
         public FeedViewModel()
         {
-            BlabsByOthers = new List<Blab>();
-            BlabsByMe = new List<Blab>();
+            BlabsByOthers = [];
+            BlabsByMe = [];
         }
         public string CurrentUser { get; set; }
         public string Error { get; set; }
