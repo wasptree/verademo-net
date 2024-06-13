@@ -32,8 +32,8 @@ See the `docs` folder.
 
 ## Technologies Used
 
-* ASP.NET Core MVC on .NET 8.0
-* Sql Server 2017 Express
+* ASP.NET MVC on .NET 8.0
+* Sql Server 2022 Express
 
 ## Development
 
