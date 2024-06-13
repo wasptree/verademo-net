@@ -1,4 +1,4 @@
-# VeraDemo.NET - Blab-a-Gag
+# VeraDemo NET - Blab-a-Gag
 
 ## About
 
@@ -6,6 +6,14 @@ Blab-a-Gag is a fairly simple forum type application which allows:
 * Users can post a one-liner joke.
 * Users can follow the jokes of other users or not (listen or ignore).
 * Users can comment on other users messages (heckle).
+
+It is based around .NET 8
+
+For other variations, please consider:
+
+[VeraDemo.NET](https://github.com/veracode/verademo-dotnet) (.NET Framework)
+
+[VeraDemo.NET Core](https://github.com/veracode/verademo-dotnetcore/) (.NET Core 3.1)
 
 ### URLs
 
