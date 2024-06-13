@@ -4,7 +4,7 @@
 # aspnetcore-runtime-8.0 to enable re-compilation within the lab.
 #
 # https://hub.docker.com/_/microsoft-mssql-server
-# This is Ubuntu 16.04 LTS
+# This is Ubuntu 22.04
 FROM mcr.microsoft.com/mssql/server:2022-CU12-ubuntu-22.04
 
 # This is so that we can add some relevant soft links and apt

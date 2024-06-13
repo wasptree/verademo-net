@@ -7,7 +7,7 @@ Verademo.NET takes values from the user without applying validation. .NET provid
 Exploit
 -------
 1. Login
-2. Go to `/profile` and change the username to a single character
+2. Go to `/Account/profile` and change the username to a single character
 
 Mitigation
 ----------

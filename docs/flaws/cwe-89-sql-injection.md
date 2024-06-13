@@ -7,7 +7,7 @@ their own SQL components.
 
 Exploit 1 - 'blind' SQLi
 ------------------------
-1. Go to `/login`
+1. Go to `/Account/login`
 2. For Username fill in: `admin' or 1=1 --`
 3. Observe that you can bypass authentication and log in as the admin user.
 
