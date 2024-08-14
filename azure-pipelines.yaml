@@ -1,0 +1,44 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+steps:
+- task: NuGetToolInstaller@1
+
+- task: NuGetCommand@2
+  inputs:
+    restoreSolution: '$(solution)'
+
+- task: PowerShell@2
+  displayName: Veracode Package
+  inputs:
+    targetType: 'inline'
+    script: |
+      $veracodeWrapperUrl = "https://tools.veracode.com/veracode-cli/install.ps1"
+      # Enable Powershell to run scripts
+      Set-ExecutionPolicy AllSigned -Scope Process -Force
+      # Download the Veracode CLI
+      $ProgressPreference = "silentlyContinue"; iex ((New-Object System.Net.WebClient).DownloadString($veracodeWrapperUrl))
+      # Run autopackage, placing files in verascan
+      veracode package --source ./ --output $(build.artifactstagingdirectory)/verascan --trust
+
+- task: Veracode@3
+  displayName: Veracode Policy Scan
+  inputs:
+    ConnectionDetailsSelection: 'Endpoint'
+    AnalysisService: 'veracode_scan'
+    veracodeAppProfile: '${Build.Repository.Name}'
+    version: '$(Build.BuildNumber)'
+    filepath: '$(build.artifactstagingdirectory)/verascan'
+    createProfile: true
+    importResults: false
+    #maximumWaitTime: '45'
+    #failBuildOnPolicyFail: true
+    optargs: '-criticality high -deleteincompletescan 2'
