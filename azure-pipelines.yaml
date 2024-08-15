@@ -34,7 +34,7 @@ steps:
   inputs:
     ConnectionDetailsSelection: 'Endpoint'
     AnalysisService: 'veracode_scan'
-    veracodeAppProfile: '${Build.Repository.Name}'
+    veracodeAppProfile: '$(Build.Repository.Name)'
     version: '$(Build.BuildNumber)'
     filepath: '$(build.artifactstagingdirectory)/verascan'
     createProfile: true
