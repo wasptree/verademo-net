@@ -29,8 +29,8 @@ steps:
         ### Uncomment the following line for failing build on IAC / Container findings
         # grep "Policy Passed = true" iac-scan.table
     env:
-      VERACODE_API_KEY_ID: '$(VERACODE_API_ID)'
-      VERACODE_API_KEY_SECRET: '$(VERACODE_API_KEY)'
+      VERACODE_API_KEY_ID: '$(VERACODE_API_KEY_ID)'
+      VERACODE_API_KEY_SECRET: '$(VERACODE_API_KEY_SECRET)'
     
   - task: Veracode@3
     displayName: Veracode Policy Scan
