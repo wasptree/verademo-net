@@ -19,13 +19,15 @@ steps:
         curl -fsS https://tools.veracode.com/veracode-cli/install | sh
         ./veracode package --source ./ --output $(build.artifactstagingdirectory)/verascan --trust
 
-  - task: Bash@3
+  - task: AzureCLI@2
     displayName: Veracode IAC Analysis
     inputs:
+      azureSubscription: 'veracode_scan'
       targetType: 'inline'
-      script: |
-        curl -fsS https://tools.veracode.com/veracode-cli/install | sh
-        ./veracode scan --type directory --source ./ --format table | tee iac-scan.table
+      script: |     
+        env | sort
+        #curl -fsS https://tools.veracode.com/veracode-cli/install | sh
+        #./veracode scan --type directory --source ./ --format table | tee iac-scan.table
         ### Uncomment the following line for failing build on IAC / Container findings
         # grep "Policy Passed = true" iac-scan.table
     
