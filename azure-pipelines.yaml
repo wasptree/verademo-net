@@ -22,7 +22,6 @@ steps:
   - task: Bash@3
     displayName: Veracode IAC Analysis
     inputs:
-      azureSubscription: 'veracode_scan'
       targetType: 'inline'
       script: |     
         curl -fsS https://tools.veracode.com/veracode-cli/install | sh
